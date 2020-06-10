@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Piedra&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+  background-color: #1d212b !important;
+  height: 100vh;
+}
+.bo {
+  position: relative;
+  margin-top: 5vh;
+  width: 50vw;
+  height: 30vw;
+  line-height: 4vw;
+  /* text-align: center; */
+  color: #ffee00;
+  background-color: #151823;
+  /* animation: textColor 10s ease infinite; */
+  font-size: large;
+}
+.bo:after {
+  position: absolute;
+  content: "";
+  top: 5vh;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.75);
+  -webkit-filter: blur(5vw);
+  -moz-filter: blur(5vw);
+  -ms-filter: blur(5vw);
+  filter: blur(5vw);
+  background: linear-gradient(270deg, #0fffc1, #7e0fff);
+  background-size: 200% 200%;
+  animation: animateGlow 10s ease infinite;
+}
+
+/* Create a sticky/fixed navbar */
+#navbar {
+  overflow: hidden;
+  background-color: #1d212b;
+  padding: 10px;
+  position: fixed; /* Sticky/fixed navbar */
+  width: 100%;
+  top: 0; /* At the top */
+  z-index: 99;
+}
+
+/* Style the navbar links */
+#navbar a {
+  float: left;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+/* Style the logo */
+#navbar #logo {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+/* Links on mouse-over */
+#navbar a:hover {
+  background-color: #1d212b;
+  color: rgb(255, 255, 255);
+}
+/* Display some links to the right */
+#navbar-right {
+  float: right;
+}
+.quote {
+  position: relative;
+  color: azure;
+  padding-top: 3vh;
+  font-size: 2em;
+  display: flex;
+  justify-content: center;
+  font-family: "Piedra", cursive;
+}
+
+.container {
+  margin-top: 10vh;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.search-text {
+  color: azure;
+}
+.form-control {
+  background-color: #1e2229 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+.choose {
+  margin: 10px 0px;
+  margin-top: 20px;
+  padding: 0;
+  position: absolute;
+}
+.cat {
+  color: azure;
+  margin-top: 2rem;
+  margin-bottom: 0rem;
+}
+div.form-check {
+  margin-left: 20px;
+  margin: 0 10px;
+}
+.form-check-label {
+  color: azure;
+}
+.submit {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  background-color: #151823;
+  color: antiquewhite;
+  animation: textColor 10s ease infinite;
+  outline: none;
+}
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
+@media only screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important; /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
+  }
+  #navbar #logo {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #navbar a {
+    text-align: left;
+  }
+  #navbar-right {
+    float: none;
+  }
+  .container .img {
+    width: 20px;
+    height: 20px;
+  }
+  .bo {
+    height: 35vh;
+    line-height: 4.3vh;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .bo {
+    line-height: 4.5vh;
+  }
+}
+@keyframes animateGlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes textColor {
+  0% {
+    color: #7e0fff;
+  }
+  50% {
+    color: #0fffc1;
+  }
+  100% {
+    color: #7e0fff;
+  }
+}
