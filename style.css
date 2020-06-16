@@ -23,6 +23,7 @@ body {
   font-family: monospace;
   background-color: #1d212b !important;
   height: 100vh;
+  overflow-x: hidden; /* to fix the irregular movement when hover on social media icon*/
 }
 .bo {
   position: relative;
@@ -93,6 +94,10 @@ body {
 /* Display some links to the right */
 #navbar-right {
   float: right;
+}
+.row {
+  display: flex;
+  justify-content: center;
 }
 .about {
   font-size: 20px;
@@ -166,8 +171,8 @@ div.form-check {
 /*media link*/
 
 .pos3 {
-  position: fixed;
-  bottom: -5%;
+  position: absolute;
+  bottom: -20%;
   right: 5px;
   z-index: 1;
 }
@@ -272,11 +277,13 @@ div.form-check {
   }
 }
 @media only screen and (max-width: 600px) {
-  .pos3 {
-    position: absolute;
-    bottom: -25%;
-    right: 50px;
-    z-index: 1;
+  .bo {
+    font-size: 15px;
+    width: 70vw !important;
+    height: 45vw !important;
+  }
+  .bo:after {
+    top: 5vh;
   }
 }
 @media only screen and (max-width: 870px) {
@@ -286,12 +293,30 @@ div.form-check {
   body {
     height: 110vh;
   }
-}
-@media only screen and (max-width: 400px) {
-  .bo {
-    line-height: 4.5vh;
+  .pos3 {
+    bottom: -28%;
+    margin-right: -50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
   }
 }
+@media only screen and (max-width: 500px) {
+  .bo {
+    line-height: 4.5vh !important;
+    width: 70vw !important;
+    height: 60vw !important;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .bo {
+    line-height: 4vh !important;
+  }
+}
+
 @keyframes animateGlow {
   0% {
     background-position: 0% 50%;
